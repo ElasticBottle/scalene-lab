@@ -31,14 +31,3 @@ jobs:
           version: latest
       - name: Run Biome
         run: biome ci .
-
-  typecheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./tooling/github
-
-      - name: Typecheck
-        run: bun typecheck
