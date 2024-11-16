@@ -40,12 +40,6 @@ export const Route = createRootRouteWithContext<{
       ? [
           {
             type: "module",
-            children: `const classList = document.documentElement.classList;
-        classList.remove("light", "dark");
-        classList.add(localStorage.getItem("scalele-lab-theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));`,
-          },
-          {
-            type: "module",
             children: `import RefreshRuntime from "/_build/@react-refresh";
 RefreshRuntime.injectIntoGlobalHook(window)
 window.$RefreshReg$ = () => {}
@@ -53,12 +47,6 @@ window.$RefreshSig$ = () => (type) => type`,
           },
         ]
       : [
-          {
-            type: "module",
-            children: `const classList = document.documentElement.classList;
-        classList.remove("light", "dark");
-        classList.add(localStorage.getItem("scalele-lab-theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));`,
-          },
           {
             type: "application/ld+json",
             children: JSON.stringify({
@@ -93,7 +81,14 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <Meta />
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         <ScrollRestoration />
         <TanStackRouterDevtools position="bottom-right" />
         <ReactQueryDevtools buttonPosition="bottom-left" />
