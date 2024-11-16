@@ -5,9 +5,9 @@ import {
   ScrollRestoration,
   createRootRouteWithContext,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { Meta, Scripts } from "@tanstack/start";
 import type { ReactNode } from "react";
+import * as React from "react";
 import { ThemeProvider } from "~/components/theme-provider";
 import { siteConfig } from "~/lib/site-config";
 import baseCss from "~/styles/global.css?url";
@@ -90,10 +90,24 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
           {children}
         </ThemeProvider>
         <ScrollRestoration />
-        <TanStackRouterDevtools position="bottom-right" />
+        <React.Suspense>
+          <TanStackRouterDevtools position="bottom-right" />
+        </React.Suspense>
         <ReactQueryDevtools buttonPosition="bottom-left" />
         <Scripts />
       </body>
     </html>
   );
 }
+
+const TanStackRouterDevtools =
+  process.env.NODE_ENV === "production"
+    ? () => null // Render nothing in production
+    : React.lazy(() =>
+        // Lazy load in development
+        import("@tanstack/router-devtools").then((res) => ({
+          default: res.TanStackRouterDevtools,
+          // For Embedded Mode
+          // default: res.TanStackRouterDevtoolsPanel
+        })),
+      );
