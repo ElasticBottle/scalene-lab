@@ -1,0 +1,4 @@
+name = "scalene-lab"
+compatibility_date = "2024-11-16"
+compatibility_flags = ["nodejs_compat"]
+main = "./dist/worker/index.js"
