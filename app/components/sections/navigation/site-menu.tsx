@@ -4,7 +4,6 @@ import { Link } from "@tanstack/react-router";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu";
@@ -19,10 +18,12 @@ export function SiteMenu() {
         <NavigationMenuList>
           {siteConfig.header.map((item) => (
             <NavigationMenuItem key={item.label} asChild>
-              <Link hash={item.hash} href={item.href}>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  {item.label}
-                </NavigationMenuLink>
+              <Link
+                hash={item.hash}
+                href={item.href}
+                className={navigationMenuTriggerStyle()}
+              >
+                {item.label}
               </Link>
             </NavigationMenuItem>
           ))}
