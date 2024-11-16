@@ -13,9 +13,10 @@
         "noMissingVarFunction": "error",
         "useSortedClasses": {
           "level": "error",
+          "fix": "safe",
           "options": {
             "attributes": [],
-            "functions": ["clsx", "cva", "tw"]
+            "functions": ["clsx", "cva", "tw", "cn"]
           }
         }
       },
