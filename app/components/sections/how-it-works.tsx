@@ -1,4 +1,5 @@
 import { CalendarCheck, Clock, ScrollText } from "lucide-react";
+import PageSection from "../ui/page-section";
 
 const steps = [
   {
@@ -22,9 +23,9 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section
-      id="how-it-works"
-      className="bg-gradient-to-b from-muted to-background py-16"
+    <PageSection
+      title="How It Works"
+      subtitle="Get your body composition analysis in just 15 minutes"
     >
       <div className="container mx-auto px-4">
         <h2 className="mb-12 text-center font-bold text-3xl">How it works</h2>
@@ -47,6 +48,6 @@ export function HowItWorksSection() {
           ))}
         </div>
       </div>
-    </section>
+    </PageSection>
   );
 }

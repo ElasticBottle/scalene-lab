@@ -9,42 +9,6 @@ import { buttonVariants } from "../ui/button";
 import PageSection from "../ui/page-section";
 import { Switch } from "../ui/switch";
 
-const pricingPlans = [
-  {
-    name: "Monthly Plan",
-    price: 79,
-    period: "Per scan, billed monthly",
-    features: [
-      "Everything in Quarterly Plan",
-      "Monthly progress tracking",
-      "Priority booking",
-    ],
-    isPopular: false,
-  },
-  {
-    name: "Quarterly Plan",
-    price: 89,
-    period: "Per scan, billed quarterly",
-    features: [
-      "Everything in Single Scan",
-      "Progress tracking",
-      "Quarterly comparison reports",
-    ],
-    isPopular: true,
-  },
-  {
-    name: "Single Scan",
-    price: 99,
-    period: "One-time scan",
-    features: [
-      "Full body composition analysis",
-      "Detailed report",
-      "15-minute consultation",
-    ],
-    isPopular: false,
-  },
-];
-
 export function PricingSection() {
   const [isMonthly, setIsMonthly] = useState(true);
   const { isDesktop } = useMediaQuery();

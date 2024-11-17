@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CtaSection } from "~/components/sections/call-to-action";
 import { FaqSection } from "~/components/sections/faq";
 import { HowItWorksSection } from "~/components/sections/how-it-works";
 import { Header } from "~/components/sections/navigation/header";
@@ -46,23 +47,7 @@ function Home() {
       <HowItWorksSection />
       <PricingSection />
       <FaqSection />
-
-      {/* CTA Section */}
-      <section className="bg-primary py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-6 font-bold text-3xl text-primary-foreground">
-            Ready to understand your body composition?
-          </h2>
-          <a
-            href="https://cal.com/winston-yeo/10min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-lg bg-background px-8 py-4 font-semibold text-foreground text-lg transition-colors hover:bg-muted"
-          >
-            Book Your Consultation Now
-          </a>
-        </div>
-      </section>
+      <CtaSection />
     </main>
   );
 }

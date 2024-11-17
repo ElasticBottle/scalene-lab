@@ -1,3 +1,5 @@
+import { cn } from "~/lib/ui";
+
 interface PageSectionProps {
   id?: string;
   title?: string;
@@ -17,7 +19,7 @@ export default function PageSection({
 }: PageSectionProps) {
   const sectionId = title ? title.toLowerCase().replace(/\s+/g, "-") : id;
   return (
-    <section id={id || sectionId} className={className}>
+    <section id={id || sectionId} className={cn("scroll-mt-14", className)}>
       <div className="container mx-auto px-4 py-16">
         <div className="mx-auto space-y-4 pb-6 text-center">
           {title && (
