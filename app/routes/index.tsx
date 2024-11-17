@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { FaqSection } from "~/components/sections/faq-section";
+import { FaqSection } from "~/components/sections/faq";
 import { HowItWorksSection } from "~/components/sections/how-it-works";
 import { Header } from "~/components/sections/navigation/header";
-import { Pricing } from "~/components/sections/pricing";
+import { PricingSection } from "~/components/sections/pricing";
+import { ProblemSection } from "~/components/sections/problem";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -41,9 +42,9 @@ function Home() {
           </div>
         </div>
       </section>
-
+      <ProblemSection />
       <HowItWorksSection />
-      <Pricing />
+      <PricingSection />
       <FaqSection />
 
       {/* CTA Section */}
