@@ -125,7 +125,14 @@ export const siteConfig = {
       id: "duration",
       question: "How long does a scan take?",
       answer:
-        "The actual scan takes only 15 minutes. The entire process, including preparation and consultation, typically takes 30 minutes.",
+        "The actual scan day of only takes 15 minutes. We'll be there every step of the way to ensure a smooth experience for you.",
+    },
+    {
+      id: "comparison",
+      question:
+        "How does a DEXA scan compare to other body composition methods like calipers or bioelectrical impedance?",
+      answer:
+        "DEXA scans provide the most accurate measurement of body composition, including bone density, muscle mass, and fat distribution. It's considered the gold standard for body composition analysis and is widely used in clinical settings.",
     },
   ],
   footer: [],

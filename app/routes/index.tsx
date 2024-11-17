@@ -33,7 +33,7 @@ function Home() {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-primary px-8 py-4 font-semibold text-lg text-primary-foreground transition-colors hover:bg-primary/90"
               >
-                Chat with Our Founder
+                I want to understand my body composition
               </a>
               <p className="mt-3 text-muted-foreground text-sm">
                 Free 10-minute consultation to discuss your health goals

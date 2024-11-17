@@ -1,7 +1,7 @@
 import { BadgeDollarSign, Clock, Ruler } from "lucide-react";
 import { Card, CardContent } from "~/components/ui/card";
-import BlurFade from "../animation/blur-fade";
-import PageSection from "../ui/page-section";
+import { BlurFade } from "../animation/blur-fade";
+import { PageSection } from "../ui/page-section";
 
 const problems = [
   {
@@ -27,8 +27,8 @@ const problems = [
 export function ProblemSection() {
   return (
     <PageSection
-      title="The Issue with "
-      subtitle="Getting accurate body composition data in Singapore shouldn't be a hassle."
+      title="Full body composition analysis is inaccessible."
+      subtitle="It shouldn't cost $300 to do a simple full body scan."
     >
       <div className="grid grid-cols-1 gap-8 pt-12 md:grid-cols-3">
         {problems.map((problem, index) => (

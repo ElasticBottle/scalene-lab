@@ -9,7 +9,7 @@ interface PageSectionProps {
   className?: string;
 }
 
-export default function PageSection({
+export function PageSection({
   id,
   title,
   subtitle,

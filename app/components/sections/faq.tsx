@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import PageSection from "../ui/page-section";
+import { PageSection } from "../ui/page-section";
 
 export function FaqSection() {
   return (

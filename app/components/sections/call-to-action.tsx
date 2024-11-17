@@ -1,4 +1,4 @@
-import PageSection from "../ui/page-section";
+import { PageSection } from "../ui/page-section";
 import { CtaButton } from "./navigation/cta-button";
 
 export function CtaSection() {

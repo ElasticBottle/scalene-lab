@@ -6,7 +6,7 @@ import useMediaQuery from "~/lib/hook/use-media-query";
 import { siteConfig } from "~/lib/site-config";
 import { cn } from "~/lib/ui";
 import { buttonVariants } from "../ui/button";
-import PageSection from "../ui/page-section";
+import { PageSection } from "../ui/page-section";
 import { Switch } from "../ui/switch";
 
 export function PricingSection() {
