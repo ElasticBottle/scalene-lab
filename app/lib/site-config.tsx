@@ -51,69 +51,81 @@ export const siteConfig = {
   ],
   pricing: [
     {
-      name: "BASIC",
-      href: "#",
-      price: "$19",
-      period: "month",
-      yearlyPrice: "$16",
-      features: [
-        "1 User",
-        "5GB Storage",
-        "Basic Support",
-        "Limited API Access",
-        "Standard Analytics",
-      ],
-      description: "Perfect for individuals and small projects",
-      buttonText: "Subscribe",
-      isPopular: false,
-    },
-    {
-      name: "PRO",
-      href: "#",
-      price: "$49",
-      period: "month",
-      yearlyPrice: "$40",
-      features: [
-        "5 Users",
-        "50GB Storage",
-        "Priority Support",
-        "Full API Access",
-        "Advanced Analytics",
-      ],
-      description: "Ideal for growing businesses and teams",
-      buttonText: "Subscribe",
-      isPopular: true,
-    },
-    {
-      name: "ENTERPRISE",
+      name: "Single Scan",
       href: "#",
       price: "$99",
-      period: "month",
-      yearlyPrice: "$82",
+      period: "scan",
+      billingPeriod: "billed per scan",
+      yearlyPrice: "$94",
+      yearlyBillingPeriod: "billed annually",
       features: [
-        "Unlimited Users",
-        "500GB Storage",
-        "24/7 Premium Support",
-        "Custom Integrations",
-        "AI-Powered Insights",
+        "Full body composition analysis",
+        "Detailed report",
+        "15-minute consultation",
       ],
-      description: "For large-scale operations and high-volume users",
-      buttonText: "Subscribe",
       isPopular: false,
+      buttonText: "Subscribe",
+      description: "Perfect for individuals just getting started",
+    },
+    {
+      name: "Quarterly Plan",
+      href: "#",
+      price: "$89",
+      period: "quarter",
+      billingPeriod: "billed quarterly",
+      yearlyPrice: "$84",
+      yearlyBillingPeriod: "billed annually",
+      features: [
+        "Everything in Single Scan",
+        "Progress tracking",
+        "Quarterly comparison reports",
+      ],
+      isPopular: true,
+      buttonText: "Subscribe",
+      description: "Ideal for the busy professional",
+    },
+    {
+      name: "Monthly Plan",
+      href: "#",
+      price: "$79",
+      period: "month",
+      billingPeriod: "billed monthly",
+      yearlyPrice: "$74",
+      yearlyBillingPeriod: "billed annually",
+      features: [
+        "Everything in Quarterly Plan",
+        "Monthly progress tracking",
+        "Priority booking",
+      ],
+      isPopular: false,
+      buttonText: "Subscribe",
+      description: "Tailored for the health enthusiasts",
     },
   ],
   faqs: [
     {
-      question: "What is nexus.ai?",
-      answer: (
-        <span>
-          nexus.ai is an advanced AI-powered penetration testing platform
-          designed to automate and enhance cybersecurity assessments. It uses
-          machine learning algorithms to identify vulnerabilities, simulate
-          attacks, and provide actionable insights to improve your security
-          posture.
-        </span>
-      ),
+      id: "safety",
+      question: "Is DEXA scanning safe?",
+      answer:
+        "Yes, DEXA scanning is very safe. The radiation exposure is minimal - less than a day of natural background radiation in Singapore.",
+    },
+    {
+      id: "location",
+      question: "Where in Singapore do you operate?",
+      answer:
+        "Our mobile van can travel to any location in Singapore. We commonly serve clients in CBD, Orchard, East Coast, and other areas.",
+    },
+    {
+      id: "who",
+      question: "Who should get a DEXA scan?",
+      answer:
+        "DEXA scans are valuable for anyone interested in their health, including fitness enthusiasts, athletes, and those on a weight management journey.",
+    },
+    {
+      id: "duration",
+      question: "How long does a scan take?",
+      answer:
+        "The actual scan takes only 15 minutes. The entire process, including preparation and consultation, typically takes 30 minutes.",
     },
   ],
   footer: [],
