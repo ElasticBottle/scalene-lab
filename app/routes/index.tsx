@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { FaqSection } from "~/components/sections/faq-section";
+import { CtaSection } from "~/components/sections/call-to-action";
+import { FaqSection } from "~/components/sections/faq";
 import { HowItWorksSection } from "~/components/sections/how-it-works";
 import { Header } from "~/components/sections/navigation/header";
-import { Pricing } from "~/components/sections/pricing";
+import { PricingSection } from "~/components/sections/pricing";
+import { ProblemSection } from "~/components/sections/problem";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -31,7 +33,7 @@ function Home() {
                 rel="noopener noreferrer"
                 className="inline-block rounded-lg bg-primary px-8 py-4 font-semibold text-lg text-primary-foreground transition-colors hover:bg-primary/90"
               >
-                Chat with Our Founder
+                I want to understand my body composition
               </a>
               <p className="mt-3 text-muted-foreground text-sm">
                 Free 10-minute consultation to discuss your health goals
@@ -41,27 +43,11 @@ function Home() {
           </div>
         </div>
       </section>
-
+      <ProblemSection />
       <HowItWorksSection />
-      <Pricing />
+      <PricingSection />
       <FaqSection />
-
-      {/* CTA Section */}
-      <section className="bg-primary py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-6 font-bold text-3xl text-primary-foreground">
-            Ready to understand your body composition?
-          </h2>
-          <a
-            href="https://cal.com/winston-yeo/10min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-lg bg-background px-8 py-4 font-semibold text-foreground text-lg transition-colors hover:bg-muted"
-          >
-            Book Your Consultation Now
-          </a>
-        </div>
-      </section>
+      <CtaSection />
     </main>
   );
 }

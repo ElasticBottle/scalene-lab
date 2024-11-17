@@ -1,19 +1,22 @@
 import { CalendarCheck, Clock, ScrollText } from "lucide-react";
+import { Card, CardContent } from "~/components/ui/card";
+import { BlurFade } from "../animation/blur-fade";
+import { PageSection } from "../ui/page-section";
 
 const steps = [
   {
-    icon: <CalendarCheck className="h-8 w-8 text-primary" />,
+    icon: CalendarCheck,
     title: "Book Your Slot",
     description: "Choose a convenient time and location in Singapore.",
   },
   {
-    icon: <Clock className="h-8 w-8 text-primary" />,
+    icon: Clock,
     title: "15-Min Scan",
     description:
       "Quick, non-invasive scan with our state-of-the-art mobile DEXA scanner.",
   },
   {
-    icon: <ScrollText className="h-8 w-8 text-primary" />,
+    icon: ScrollText,
     title: "Get Results",
     description:
       "Receive detailed insights about your body composition and personalized recommendations.",
@@ -22,31 +25,30 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section
-      id="how-it-works"
-      className="bg-gradient-to-b from-muted to-background py-16"
+    <PageSection
+      title="How It Works"
+      subtitle="Full body composition in 3 simple steps"
     >
-      <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center font-bold text-3xl">How it works</h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {steps.map((step, index) => (
-            <div key={step.title} className="rounded-lg bg-card p-6 shadow-sm">
-              <div className="mb-4 flex w-full items-center justify-center md:justify-start">
-                <span className="mr-2 font-semibold text-4xl text-primary">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                {step.icon}
-              </div>
-              <h3 className="mb-3 text-center font-bold text-xl md:text-left">
-                {step.title}
-              </h3>
-              <p className="text-center text-muted-foreground md:text-left">
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 gap-8 pt-12 md:grid-cols-3">
+        {steps.map((step, index) => (
+          <BlurFade key={step.title} delay={0.2 + index * 0.2} inView>
+            <Card className="border-none bg-background shadow-none">
+              <CardContent className="space-y-4 p-6">
+                <div className="flex size-12 items-center justify-center rounded-full bg-primary/10">
+                  <step.icon className="size-6 text-primary" />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-primary text-xl">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="font-semibold text-xl">{step.title}</h3>
+                </div>
+                <p className="text-muted-foreground">{step.description}</p>
+              </CardContent>
+            </Card>
+          </BlurFade>
+        ))}
       </div>
-    </section>
+    </PageSection>
   );
 }

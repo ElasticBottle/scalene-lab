@@ -10,8 +10,8 @@ export function CtaButton({ withLogo = false }: { withLogo?: boolean }) {
       rel="noopener noreferrer"
       className={buttonVariants({ variant: "default" })}
     >
-      {withLogo && <Icons.logo className="size-6" />}
-      Chat with Our Founder
+      {withLogo && <Icons.logo className="size-6" />}I want to understand my
+      body composition
     </a>
   );
 }
