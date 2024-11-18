@@ -15,53 +15,55 @@ import baseCss from "~/styles/global.css?url";
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
 }>()({
-  meta: () => [
-    {
-      charSet: "utf-8",
-    },
-    {
-      name: "viewport",
-      content: "width=device-width, initial-scale=1",
-    },
-    {
-      title: `${siteConfig.name} | ${siteConfig.slogan}`,
-    },
-    {
-      name: "description",
-      content: siteConfig.description,
-    },
-    {
-      name: "keywords",
-      content: siteConfig.keywords.join(", "),
-    },
-  ],
-  scripts: () => {
-    return import.meta.env.DEV
-      ? [
-          {
-            type: "module",
-            children: `import RefreshRuntime from "/_build/@react-refresh";
-RefreshRuntime.injectIntoGlobalHook(window)
-window.$RefreshReg$ = () => {}
-window.$RefreshSig$ = () => (type) => type`,
-          },
-        ]
-      : [
-          {
-            type: "application/ld+json",
-            children: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MedicalService",
-              name: `${siteConfig.name} | ${siteConfig.slogan}`,
-              description: siteConfig.description,
-              areaServed: "Singapore",
-              priceRange: "$79 - $99",
-              medicalSpecialty: "Body Composition Analysis",
-            }),
-          },
-        ];
+  head: () => {
+    return {
+      meta: [
+        {
+          charSet: "utf-8",
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+        {
+          title: `${siteConfig.name} | ${siteConfig.slogan}`,
+        },
+        {
+          name: "description",
+          content: siteConfig.description,
+        },
+        {
+          name: "keywords",
+          content: siteConfig.keywords.join(", "),
+        },
+      ],
+      scripts: import.meta.env.DEV
+        ? [
+            {
+              type: "module",
+              children: `import RefreshRuntime from "/_build/@react-refresh";
+  RefreshRuntime.injectIntoGlobalHook(window)
+  window.$RefreshReg$ = () => {}
+  window.$RefreshSig$ = () => (type) => type`,
+            },
+          ]
+        : [
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "MedicalService",
+                name: `${siteConfig.name} | ${siteConfig.slogan}`,
+                description: siteConfig.description,
+                areaServed: "Singapore",
+                priceRange: "$79 - $99",
+                medicalSpecialty: "Body Composition Analysis",
+              }),
+            },
+          ],
+      links: [{ rel: "stylesheet", href: baseCss }],
+    };
   },
-  links: () => [{ rel: "stylesheet", href: baseCss }],
   component: RootComponent,
   notFoundComponent: () => <div>Page Not Found.</div>,
 });
