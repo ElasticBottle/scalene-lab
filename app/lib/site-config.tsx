@@ -13,7 +13,7 @@ export const siteConfig = {
   ],
   links: {
     email: "contact@scalenelab.com",
-    booking: "https://cal.com/winston-yeo/10min",
+    booking: "mailto:contact@scalenelab.com",
   },
   header: [
     {
