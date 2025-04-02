@@ -38,8 +38,8 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@dotenvx/dotenvx": "^1.39.0",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
